@@ -4,67 +4,89 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Register Cover | CORK - Multipurpose Bootstrap Dashboard Template </title>
+    <title>Criar Loja | DVS Food</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/authentication/form-1.css" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->    
+    <link href="plugins/loaders/custom-loader.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
     <link rel="stylesheet" type="text/css" href="assets/css/forms/theme-checkbox-radio.css">
     <link rel="stylesheet" type="text/css" href="assets/css/forms/switches.css">
+    <link href="assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/components/custom-modal.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/animate/animate.css">
+    <script src="plugins/sweetalerts/promise-polyfill.js"></script>
+    <link href="plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/notification/snackbar/snackbar.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="form">
-
+    <div id="app">
     <div class="form-container">
         <div class="form-form">
             <div class="form-form-wrap">
                 <div class="form-container">
                     <div class="form-content">
 
-                        <h1 class="">Get started with a <br/> free account</h1>
-                        <p class="signup-link">Already have an account? <a href="auth_login.html">Log in</a></p>
-                        <form class="text-left">
+                        <h1 class="">Criei a sua loja<br/>de forma gratuita</h1>
+                        <p class="signup-link">Já tens uma loja? <a href="auth_login.html">Entrar</a></p>
+                        <form v-on:submit.prevent class="text-left">
                             <div class="form">
 
                                 <div id="username-field" class="field-wrapper input">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                    <input id="username" name="username" type="text" class="form-control" placeholder="Username">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                    <input id="name_store" name="name_store" type="text" class="form-control" placeholder="Nome da loja" v-model="name_store">
                                 </div>
+
+                                <div id="username-field" class="field-wrapper input">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                    <input id="name_forn" name="name_forn" type="text" class="form-control" placeholder="Nome do Fornecedor" v-model="name_forn">
+                                </div>
+
+
+                                <div id="email-field" class="field-wrapper input">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    <input id="phone" name="phone" type="tel" value="" placeholder="Telefone" v-model="phone">
+                                </div>
+
                                 <div id="email-field" class="field-wrapper input">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
-                                    <input id="email" name="email" type="text" value="" placeholder="Email">
+                                    <input id="email" name="email" type="email" value="" placeholder="E-mail" v-model="email">
                                 </div>
+
                                 <div id="password-field" class="field-wrapper input mb-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                                    <input id="password" name="password" type="password" value="" placeholder="Password">
+                                    <input id="password" name="password" type="password" value="" placeholder="Palavra-Passe" v-model="password">
                                 </div>
+
                                 <div class="field-wrapper terms_condition">
                                     <div class="n-chk new-checkbox checkbox-outline-primary">
                                         <label class="new-control new-checkbox checkbox-outline-primary">
                                           <input type="checkbox" class="new-control-input">
-                                          <span class="new-control-indicator"></span><span>I agree to the <a href="javascript:void(0);">  terms and conditions </a></span>
+                                          <span class="new-control-indicator"></span><span>Aceito todos<a href="javascript:void(0);">  termos e condições</a></span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="d-sm-flex justify-content-between">
                                     <div class="field-wrapper toggle-pass">
-                                        <p class="d-inline-block">Show Password</p>
+                                        <p class="d-inline-block">Ver Palavra-Passe</p>
                                         <label class="switch s-primary">
                                             <input type="checkbox" id="toggle-password" class="d-none">
                                             <span class="slider round"></span>
                                         </label>
                                     </div>
                                     <div class="field-wrapper">
-                                        <button type="submit" class="btn btn-primary" value="">Get Started!</button>
+                                        <button class="btn btn-primary" v-on:click="createStore">Criar Loja</button>
                                     </div>
                                 </div>
 
                             </div>
                         </form>                        
-                        <p class="terms-conditions">© 2019 All Rights Reserved. <a href="index.html">CORK</a> is a product of Designreset. <a href="javascript:void(0);">Cookie Preferences</a>, <a href="javascript:void(0);">Privacy</a>, and <a href="javascript:void(0);">Terms</a>.</p>
-
+                        <p class="terms-conditions">© 2021 Todos direitos reservado <a href="index.html">DVS Food</a>.</p>
                     </div>                    
                 </div>
             </div>
@@ -74,15 +96,28 @@
             </div>
         </div>
     </div>
+</div>
 
     
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="assets/js/vue/vue-min.js"></script>
     <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
     <script src="bootstrap/js/popper.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    
-    <!-- END GLOBAL MANDATORY SCRIPTS -->
-    <script src="assets/js/authentication/form-1.js"></script>
+    <script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/app.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
+    <script src="plugins/highlight/highlight.pack.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/scrollspyNav.js"></script>
+    <script src="plugins/blockui/jquery.blockUI.min.js"></script>
+    <script src="plugins/sweetalerts/sweetalert2.min.js"></script>
+    <script src="plugins/notification/snackbar/snackbar.min.js"></script>
+    <script src="assets/scripts/create-store-script.js"></script>
 </body>
 </html>
