@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>SpeedNet - WhatsApp SMS</title>
+    <title>Admin | SGSECS</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
     <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
     <script src="assets/js/loader.js"></script>
-
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
-
-    <link href="assets/css/components/custom-modal.css" rel="stylesheet" type="text/css">
-
-    <link href="plugins/animate/animate.css" rel="stylesheet" type="text/css" />
-    <script src="plugins/sweetalerts/promise-polyfill.js"></script>
-    <link href="plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
-    <link href="plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/dashboard/dash_2.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body class="alt-menu sidebar-noneoverflow">
@@ -33,7 +27,33 @@
         <header class="header navbar navbar-expand-sm expand-header">
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
-            
+            <ul class="navbar-item flex-row ml-auto">
+                <li class="nav-item dropdown user-profile-dropdown  order-lg-0 order-1">
+                    <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-check"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                    </a>
+                    <div class="dropdown-menu position-absolute e-animated e-fadeInUp" aria-labelledby="userProfileDropdown">
+                        <div class="user-profile-section">                            
+                            <div class="media mx-auto">
+                                <div class="media-body">
+                                    <h5>Dorivaldo Santos</h5>
+                                    <p>Admin</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="user_profile.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> <span>Perfil</span>
+                            </a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="auth_login.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> <span>Terminar sessão</span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </header>
     </div>
     <!--  END NAVBAR  -->
@@ -49,140 +69,221 @@
         <div class="sidebar-wrapper sidebar-theme">
             
             <nav id="sidebar">
+
+                <ul class="navbar-nav theme-brand flex-row  text-center" style="background-color: #fff;">
+                    <li class="nav-item theme-logo">
+                        <a href="index.html">
+                            <img src="assets/img/logo_example.png" class="navbar-logo" alt="logo">
+                        </a>
+                    </li>
+                    <li class="nav-item theme-text">
+                        <a href="index.html" class="nav-link text-secondary" style="color: #1b55e2 !important;"> SGSECS </a>
+                    </li>
+                </ul>
+
                 <ul class="list-unstyled menu-categories" id="accordionExample">
                     <li class="menu active">
-                        <a href="index.html" aria-expanded="true" class="dropdown-toggle">
+                        <a href="/"  aria-expanded="true" class="dropdown-toggle">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                                 <span>Dashboard</span>
                             </div>
-                        </a>
-                        
-                    </li>
-
-                    <li class="menu">
-                        <a href="apps_chat.html" aria-expanded="false" class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                                <span>Mensagens</span>
-                            </div>
+                            
                         </a>
                     </li>
 
                     <li class="menu">
-                        <a href="apps_notes.html" aria-expanded="false" class="dropdown-toggle">
+                        <a href="#apolice" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                                <span>Modelos</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                <span>Apólice</span>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
                             </div>
                         </a>
-                    </li>                 
-                </ul>             
+                        <ul class="collapse submenu list-unstyled" id="apolice" data-parent="#accordionExample">
+                            <li>
+                                <a href="/table_dt_basic.html"> Listar </a>
+                            </li>
+                            <li>
+                                <a href="/criar_apolice.html"> Criar </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu">
+                        <a href="#sinistro" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                <span>Sinistro</span>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </div>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="sinistro" data-parent="#accordionExample">
+                            <li>
+                                <a href="/sinistros.html"> Listar </a>
+                            </li>
+                            <li>
+                                <a href="/criar_sinistro.html"> Criar </a>
+                            </li>
+                            <li>
+                                <a href="/sinistros_tipo.html"> Tipos </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="menu">
+                        <a href="#clients" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                <span>Clientes</span>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </div>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="clients" data-parent="#accordionExample">
+                            <li>
+                                <a href="/clients.html"> Listar </a>
+                            </li>
+                            <li>
+                                <a href="/criar_cliente.html"> Tipos </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+                </ul>
+                
             </nav>
+
         </div>
         <!--  END SIDEBAR  -->
         
         <!--  BEGIN CONTENT AREA  -->
         <div id="content" class="main-content">
             <div class="layout-px-spacing">
+
                 <div class="row layout-top-spacing">
-                    <div class="col-lg-6 col-12 layout-spacing">
-                        <div class="statbox widget box box-shadow">
-                            <div class="widget-header">                                
-                                <div class="row">
-                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h4>Mensagem Por POP</h4>
+
+                    <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                        <div class="widget widget-chart-one">
+                            <div class="widget-heading">
+                                <h5 class="">Resumo</h5>
+                            </div>
+
+                            <div class="widget-content">
+                                <div class="tabs tab-content">
+                                    <div id="content_1" class="tabcontent"> 
+                                        <div id="revenueMonthly"></div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="widget-content widget-content-area">
-                                <form id="meuFormularioPop">
-                                    <div class="form-group mb-4">
-                                        <label for="selectPop">POP</label>
-                                        <select class="form-control" id="selectPop">
-                                            <option value="todos">Todos</option>
-                                            <option value="POP-SIMIONE">POP-SIMIONE</option>
-                                            <option value="POP-ZEE">POP-ZEE</option>
-                                            <option value="POP-VON">POP-VON</option>
-                                            <option value="POP-ROUTER HQ">POP-ROUTER HQ</option>
-                                            <option value="POP-KAPALANGA">POP-KAPALANGA</option>
-                                            <option value="POP-CLT">POP-CLT</option>
-                                            <option value="POP-SAP1">POP-SAP1</option>
-                                            <option value="POP-CAPOLO">POP-CAPOLO</option>
-                                            <option value="POP CLAD1">POP CLAD1</option>
-                                            <option value="POP-VACARIA">POP-VACARIA</option>
-                                            <option value="POP-SAP1_S4">POP-SAP1 S4</option>
-                                            <option value="POP-KIKUXI">POP-KIKUXI</option>
-                                            <option value="POP-SAP1_S2">POP-SAP1 S2</option>
-                                            <option value="POP-CAMAMA">POP-CAMAMA</option>
-                                            <option value="POP-SAP3">POP-SAP3</option>
-                                            <option value="POP-CAMAMA_S2">POP-CAMAMA S2</option>
-                                            <option value="POP-KIKUXI_S3">POP-KIKUXI S3</option>
-                                            <option value="POP-HQTAL">POP-HQTAL</option>
-                                            <option value="POP-Teste">POP-Teste</option>
-                                            <option value="POP-Teste1">POP-Teste 1</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group mb-4">
-                                        <label for="meuSelect">Modelo</label>
-                                        <select class="form-control" id="meuSelect">
-                                                                                     
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="form-group mb-4">
-                                        <label for="msg">Mensagem</label>
-                                        <textarea class="form-control" id="msg" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group mb-4 mt-3">
-                                        <label for="fileInputPop">Anexo</label>
-                                        <input type="file" class="form-control-file" id="fileInputPop">
-                                    </div>
-                                    <input type="submit" name="time" class="mt-4 mb-4 btn btn-primary">
-                                </form>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-12 layout-spacing">
-                        <div class="statbox widget box box-shadow">
-                            <div class="widget-header">                                
-                                <div class="row">
-                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h4>Mensagem Por Cliente</h4>
-                                    </div>
-                                </div>
+                    <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                        <div class="widget widget-chart-two">
+                            <div class="widget-heading">
+                               
                             </div>
-                            <div class="widget-content widget-content-area">
-                                <form id="meuFormulario">
-                                    <div class="form-group mb-4">
-                                        <label for="reference">Referência</label>
-                                        <input type="tel" maxlength="9" class="form-control" id="reference" placeholder="900000001" required>
-                                    </div>
-                                    <div class="form-group mb-4">
-                                        <label for="meuSelect1">Modelo</label>
-                                        <select class="form-control" id="meuSelect1">
-                                                                                       
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="form-group mb-4">
-                                        <label for="msg1">Mensagem</label>
-                                        <textarea class="form-control" id="msg1" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group mb-4 mt-3">
-                                        <label for="file1">Anexo</label>
-                                        <input type="file" class="form-control-file" id="fileInput">
-                                    </div>
-                                    <input type="submit" name="time" class="mt-4 mb-4 btn btn-primary">
-                                </form>
+                            <div class="widget-content">
+                                <div id="chart-2" class=""></div>
                             </div>
                         </div>
                     </div>
 
-                </div>
-                                                             
+                    
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                        <div class="widget widget-table-two">
+
+                            <div class="widget-heading">
+                                <h5 class="">Apólices</h5>
+                            </div>
+
+                            <div class="widget-content">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th><div class="th-content">Cliente</div></th>
+                                                <th><div class="th-content">Produto</div></th>
+                                                <th><div class="th-content">Número da Apólice</div></th>
+                                                <th><div class="th-content th-heading">Prêmio (Kz)</div></th>
+                                                <th><div class="th-content">Data de Emissão</div></th>
+                                                <th><div class="th-content">Início da Cobertura</div></th>
+                                                <th><div class="th-content">Término da Cobertura</div></th>
+                                                <th><div class="th-content">Status</div></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>João Silva</div></td>
+                                                <td><div class="td-content product-brand">Seguro Auto</div></td>
+                                                <td><div class="td-content">#12345</div></td>
+                                                <td><div class="td-content pricing"><span class="">500.000 Kz</span></div></td>
+                                                <td><div class="td-content">10/11/2023</div></td>
+                                                <td><div class="td-content">15/11/2023</div></td>
+                                                <td><div class="td-content">15/11/2024</div></td>
+                                                <td><div class="td-content"><span class="badge outline-badge-success">Ativo</span></div></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maria Oliveira</div></td>
+                                                <td><div class="td-content product-brand">Seguro Residencial</div></td>
+                                                <td><div class="td-content">#67890</div></td>
+                                                <td><div class="td-content pricing"><span class="">800.000 Kz</span></div></td>
+                                                <td><div class="td-content">12/11/2023</div></td>
+                                                <td><div class="td-content">20/11/2023</div></td>
+                                                <td><div class="td-content">20/11/2024</div></td>
+                                                <td><div class="td-content"><span class="badge outline-badge-danger">Pendente</span></div></td>
+                                            </tr>
+                                            <!-- Novas entradas de apólices -->
+                                            <tr>
+                                                <td>Carlos Mendes</div></td>
+                                                <td><div class="td-content product-brand">Seguro Viagem</div></td>
+                                                <td><div class="td-content">#54321</div></td>
+                                                <td><div class="td-content pricing"><span class="">600.000 Kz</span></div></td>
+                                                <td><div class="td-content">15/11/2023</div></td>
+                                                <td><div class="td-content">25/11/2023</div></td>
+                                                <td><div class="td-content">25/11/2024</div></td>
+                                                <td><div class="td-content"><span class="badge outline-badge-success">Ativo</span></div></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sofia Pereira</div></td>
+                                                <td><div class="td-content product-brand">Seguro Saúde</div></td>
+                                                <td><div class="td-content">#98765</div></td>
+                                                <td><div class="td-content pricing"><span class="">900.000 Kz</span></div></td>
+                                                <td><div class="td-content">18/11/2023</div></td>
+                                                <td><div class="td-content">25/11/2023</div></td>
+                                                <td><div class="td-content">25/11/2024</div></td>
+                                                <td><div class="td-content"><span class="badge outline-badge-success">Ativo</span></div></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Paulo Santos</div></td>
+                                                <td><div class="td-content product-brand">Seguro Celular</div></td>
+                                                <td><div class="td-content">#45678</div></td>
+                                                <td><div class="td-content pricing"><span class="">250.000 Kz</span></div></td>
+                                                <td><div class="td-content">20/11/2023</div></td>
+                                                <td><div class="td-content">28/11/2023</div></td>
+                                                <td><div class="td-content">28/11/2024</div></td>
+                                                <td><div class="td-content"><span class="badge outline-badge-warning">Atrasado</span></div></td>
+                                            </tr>
+                                            <!-- ... -->
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
                 </div>
 
             </div>
@@ -197,233 +298,19 @@
     <script src="bootstrap/js/popper.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/js/app.js"></script>
-    <script src="plugins/blockui/jquery.blockUI.min.js"></script>
-    <script src="plugins/sweetalerts/sweetalert2.min.js"></script>
-    <script src="plugins/notification/snackbar/snackbar.min.js"></script>
-    <script src="plugins/sweetalerts/custom-sweetalert.js"></script>
-
     <script>
         $(document).ready(function() {
             App.init();
         });
     </script>
     <script src="assets/js/custom.js"></script>
-
-
-    <script>
-        var block = $('html')
-
-        function openBlock() {
-            $(block).block({
-                message: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader spin"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>',
-                fadeIn: 800,
-                overlayCSS: {
-                    backgroundColor: '#1b2024',
-                    opacity: 0.8,
-                    zIndex: 1200,
-                    cursor: 'wait'
-                },
-                css: {
-                    border: 0,
-                    color: '#fff',
-                    zIndex: 1201,
-                    padding: 0,
-                    backgroundColor: 'transparent'
-                }
-            });
-        }
-
-        function closeBlock() {
-            $(block).unblock()
-        }
-
-        function warningtext(message) {
-            const toast = swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                padding: '2em'
-            });
-
-            toast({
-                type: 'success',
-                title: message,
-                padding: '2em',
-            })
-            }
-
-        $(document).ready(function() {
-            $('#meuFormularioPop').submit(function(event) {
-                event.preventDefault();
-
-                // Pegar valores específicos dos campos do formulário
-                const pop = $('#selectPop').val();
-                const select1 = $('#meuSelect').val();
-                const msg = $('#msg').val()
-                const arquivo = $('#fileInputPop')[0].files[0];
-
-                var canSend = true;
-
-                const message = select1 === "." ? msg : select1
-
-                openBlock()
-                
-                if(canSend) {
-                    if(arquivo === undefined) {
-
-                    var settings = {
-                        "url": `http://localhost:3000/pop/${pop}`,
-                        "method": "POST",
-                        "timeout": 0,
-                        "headers": {
-                            "Content-Type": "application/json"
-                        },
-                        "data": JSON.stringify({
-                            "message": message
-                        }),
-                    };
-
-                    canSend = false
-                    $.ajax(settings).done(function (response) {
-                        canSend = true
-                        closeBlock()
-                        warningtext(response.message)
-                    });
-
-
-
-                    } else {
-
-                        const formData = new FormData();
-                        formData.append('message', message)
-                        formData.append('file', arquivo);
-
-                        $.ajax({
-                            url: `http://localhost:3000/pop/file/${pop}`,
-                            type: 'POST',
-                            data: formData,
-                            processData: false,
-                            contentType: false,
-                            success: function(response) {
-                                // Lida com a resposta bem-sucedida após o envio
-                                closeBlock()
-                                warningtext(response.message)
-                            },
-                            error: function(error) {
-                                // Lida com erros durante o envio
-                                closeBlock()
-                                warningtext("Ocorreu um erro interno, tente novamente!")
-                            }
-                        });
-                    }
-                }
-            });
-        });
-
-
-        $(document).ready(function() {
-            $('#meuFormulario').submit(function(event) {
-                event.preventDefault();
-
-                // Pegar valores específicos dos campos do formulário
-                const reference = $('#reference').val();
-                const select1 = $('#meuSelect1').val();
-                const msg = $('#msg1').val()
-                const arquivo = $('#fileInput')[0].files[0];
-
-                var canSend = true;
-
-                const message = select1 === "." ? msg : select1
-
-                openBlock()
-                
-                if(canSend) {
-                    if(arquivo === undefined) {
-
-                    var settings = {
-                        "url": `http://localhost:3000/reference/${reference}`,
-                        "method": "POST",
-                        "timeout": 0,
-                        "headers": {
-                            "Content-Type": "application/json"
-                        },
-                        "data": JSON.stringify({
-                            "message": message
-                        }),
-                    };
-
-                    canSend = false
-                    $.ajax(settings).done(function (response) {
-                        canSend = true
-                        closeBlock()
-                        warningtext(response.message)
-                    });
-
-
-
-                    } else {
-
-                        const formData = new FormData();
-                        formData.append('message', message)
-                        formData.append('file', arquivo);
-
-                        $.ajax({
-                            url: `http://localhost:3000/reference/file/${reference}`,
-                            type: 'POST',
-                            data: formData,
-                            processData: false,
-                            contentType: false,
-                            success: function(response) {
-                                // Lida com a resposta bem-sucedida após o envio
-                                closeBlock()
-                                warningtext(response.message)
-                            },
-                            error: function(error) {
-                                // Lida com erros durante o envio
-                                closeBlock()
-                                warningtext("Ocorreu um erro interno, tente novamente!")
-                            }
-                        });
-                    }
-                }
-            });
-        });
-
-
-        $.ajax({
-            url: 'http://localhost:1337/api/templates',
-            method: 'GET',
-            success: function(response) {
-                // Limpar o select antes de adicionar novos itens
-                $('#meuSelect').empty();
-
-                // Iterar pelos dados e adicionar opções ao select
-                response.data.forEach(function(item) {
-                $('#meuSelect').append($('<option>', {
-                    value: item?.attributes?.conteudo,
-                    text: item?.attributes?.nome
-                }));
-                });
-
-                $('#meuSelect1').empty();
-
-                // Iterar pelos dados e adicionar opções ao select
-                response.data.forEach(function(item) {
-                $('#meuSelect1').append($('<option>', {
-                    value: item?.attributes?.conteudo,
-                    text: item?.attributes?.nome
-                }));
-                });
-            },
-            error: function(xhr, status, error) {
-                console.error('Erro na requisição:', error);
-            }
-            });
-    </script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
+
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="plugins/apex/apexcharts.min.js"></script>
+    <script src="assets/js/dashboard/dash_2.js"></script>
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 
 </body>
 </html>

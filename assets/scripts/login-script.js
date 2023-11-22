@@ -16,7 +16,7 @@ new Vue({
         validateInputs() {
             if (this.phone.trim() == null || this.phone.length < 9) {
                 Snackbar.show({
-                    text: 'Telefone inválido, deve somente 9 caracteres',
+                    text: 'Telefone inválido, deve ter 9 caracteres',
                     pos: 'top-center',
                     actionText: 'Ok'
                 });

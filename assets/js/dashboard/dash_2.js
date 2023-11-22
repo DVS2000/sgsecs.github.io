@@ -224,7 +224,7 @@ var options1 = {
   }]
   },
   subtitle: {
-    text: 'Total Profit',
+    text: 'Total de lucros',
     align: 'left',
     margin: 0,
     offsetX: -10,
@@ -236,7 +236,7 @@ var options1 = {
     }
   },
   title: {
-    text: '$10,840',
+    text: '120.550.000,00 AO',
     align: 'left',
     margin: 0,
     offsetX: -10,
@@ -254,13 +254,13 @@ var options1 = {
       lineCap: 'square'
   },
   series: [{
-      name: 'Income',
-      data: [16800, 16800, 15500, 17800, 15500, 17000, 19000, 16000, 15000, 17000, 14000, 17000]
+      name: 'Apólices',
+      data: [16800, 16800, 15500, 17800, 15500, 17000, 19000, 16000, 15000, 17000, 14000]
   }, {
-      name: 'Expenses',
-      data: [16500, 17500, 16200, 17300, 16000, 19500, 16000, 17000, 16000, 19000, 18000, 19000]
+      name: 'Sinistros',
+      data: [16500, 17500, 16200, 17300, 16000, 19500, 16000, 17000, 16000, 19000, 18000]
   }],
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
   xaxis: {
     axisBorder: {
       show: false
@@ -438,7 +438,7 @@ var options = {
       width: 25,
     },
     series: [985, 737, 270],
-    labels: ['Apparel', 'Electronic', 'Others'],
+    labels: ['Apólices', 'Prêmios recebidos', 'Sinistros'],
     responsive: [{
         breakpoint: 1599,
         options: {
