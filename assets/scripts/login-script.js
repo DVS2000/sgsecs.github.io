@@ -36,34 +36,24 @@ new Vue({
         },
         login() {
             if (this.validateInputs()) {
-                var self = this;
+                //var self = this;
                 this.openBlock()
 
-                $.ajax({
-                    url: 'https://deliveryfood2021.herokuapp.com/api/v1/auth',
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    data: JSON.stringify({ 'phone': self.phone.trim(), 'password': self.password.trim() })
-                }).done(function (res) {
-                    self.closeBlock()
-                    const data = Object.assign({}, res)
-                    localStorage.setItem('token', data.token)
+                if(this.phone.trim() === "admin@gmail.com" && this.password.trim() === "123456") {
+                    setTimeout(() => {
+                        this.closeBlock()
+                        window.location.href = '/'
+                    }, 6000);
+                } else {
+                    this.closeBlock()
+                    Snackbar.show({
+                        text: 'Palavra-passe ou E-mail incorreto',
+                        pos: 'top-center',
+                        actionText: 'Ok'
+                    });
+                }
 
-                    window.location.href = 'http://127.0.0.1:5500/'
-                }).fail(function (res) {
-                    console.log(res)
-                    self.closeBlock()
-
-                    swal({
-                        type: 'error',
-                        title: `${res.status}`,
-                        text: `${res.responseJSON.message}`,
-                        confirmButtonText: 'Tente novamente',
-                        padding: '2em'
-                    })
-                })
+                
             }
         },
 
