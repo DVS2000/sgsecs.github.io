@@ -42,7 +42,7 @@ new Vue({
                 if(this.phone.trim() === "admin@gmail.com" && this.password.trim() === "123456") {
                     setTimeout(() => {
                         this.closeBlock()
-                        window.location.href = '/'
+                        window.location.href = 'https://dvs2000.github.io/sgsecs.github.io/'
                     }, 6000);
                 } else {
                     this.closeBlock()
